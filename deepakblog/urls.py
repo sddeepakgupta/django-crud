@@ -6,5 +6,10 @@ app_name = 'deepakblog'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('musicianDelete/<int:id>/', views.musicianDelete),
+    # path('login/', views.login, name='login'),
+    path('userlogin/', views.userlogin, name='userlogin'),
+    path('userlogout/', views.userLogout, name='userlogout'),
+    path('musicianDelete/', views.musicianDelete, name="musicianDelete"),
+    path('productMaster/', views.productMaster, name="productMaster"),
+    path('productMasterDetails/', views.productMasterDetails, name="productMasterDetails"),
 ]

@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak ::.Product Master.::</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .col-md-12 label{
+            padding-top: 15px;
+            padding-bottom: 5px;
+        }
+    </style>
+    {{ form.media }}
+</head>
+<body>
+    {% include 'deepakblog/header.html' %}
+        {% block content %}
+            <div class="container-fluid">
+                <div class="container">
+                    <h3 class="text-center py-2 text-success">All Product Records and there Status</h3>
+                    {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+                                <strong><li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li></strong>
+                            </div>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    <!-- Button trigger modal -->
+                    <div class="d-flex justify-content-end pb-3">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Add Product
+                        </button>
+                    </div>     
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Add New Products</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form action="{% url 'deepakblog:productMasterDetails' %}" method="POST"  enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="modal-body">
+                                     <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                {% if Productform %}
+                                                   {{Productform.as_table}} 
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                     </div>    
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+  
+                </div>
+            </div>
+        {% endblock content %}
+    {% include 'deepakblog/footer.html' %}
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/all.min.js' %}"></script>
+<script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+</body>
+</html>

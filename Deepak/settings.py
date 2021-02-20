@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djrichtextfield',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -102,14 +104,24 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+# RichTextEditor
+# DJRICHTEXTFIELD_CONFIG = {
+#     'js': ['https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js'],
+#     'init_template': 'djrichtextfield/init/tinymce.js',
+#     'settings': {
+#         'menubar': False,
+#         'plugins': 'link image',
+#         'toolbar': 'bold italic | link image | removeformat',
+#         'width': 700
+#     }
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -122,6 +134,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/')
 ]
+# config/settings.py
+LOGIN_REDIRECT_URL = 'userlogin/'
+
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'media') 
+MEDIA_URL = '/media/'
+
+

@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak Products</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+        *{ 
+            margin: 0;
+            padding: 0;
+        }
+        .product-icon
+        {
+            height: 20px;
+            width: 20px;
+            background-color: rgb(8, 1, 107);
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .icofont{
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    {% include 'deepakblog/header.html' %}
+        {% block content %}
+            <h3 class="text-center text-success">All Our Products</h3>
+            
+            <div class="container-fluid text-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card bg-success">
+                                <div class="card-header">
+                                <span class=""><i class="product-icon"></i></span>  Product 
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Special title treatment</h5>
+                                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                  <a href="{% url 'deepakblog:productMasterDetails' %}" class="btn btn-dark">Product Details</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-danger">
+                                <div class="card-header">
+                                    <span class=""><i class="product-icon"></i></span> Sale Product
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Special title treatment</h5>
+                                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                  <a href="#" class="btn btn-dark">Go somewhere</a>
+                                </div>
+                              </div> 
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-primary">
+                                <div class="card-header">
+                                <span class=""><i class="product-icon"></i></span>  Stock Products 
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Special title treatment</h5>
+                                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                  <a href="#" class="btn btn-dark">Go somewhere</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-md-4">
+                            <div class="card bg-dark">
+                                <div class="card-header">
+                                    <span class=""><i class="product-icon"></i></span> Deliver Product
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Special title treatment</h5>
+                                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                  <a href="#" class="btn btn-secondary">Go somewhere</a>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-warning">
+                                <div class="card-header">
+                                    <span class=""><i class="product-icon"></i></span> Release Product 
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Special title treatment</h5>
+                                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                  <a href="#" class="btn btn-dark">Go somewhere</a>
+                                </div>
+                              </div> 
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-info">
+                                <div class="card-header">
+                                    <span class=""><i class="product-icon"></i></span> Product Review
+                                </div>
+                                <div class="card-body">
+                                  <h5 class="card-title">Special title treatment</h5>
+                                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                  <a href="#" class="btn btn-dark">Go somewhere</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock content %}
+    {% include 'deepakblog/footer.html' %}
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/all.min.js' %}"></script>
+<script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+    
+</body>
+</html>

@@ -21,5 +21,6 @@ from deepakblog import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('deepakblog.urls')),
-    path('musicianDelete/<int:id>/', views.musicianDelete),
+    # path('musicianDelete/<int:id>/', views.musicianDelete),
+    path('djrichtextfield/', include('djrichtextfield.urls')),
 ]
