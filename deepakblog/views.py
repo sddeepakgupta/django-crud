@@ -84,15 +84,32 @@ def productMaster(request):
     return render(request, 'deepakblog/products.html')
 
 @login_required(login_url='deepakblog:userlogin')
-def productMasterDetails(request):
+def productDetailsMaster(request):
     if request.method == 'POST':
         forms = productMasterForm(request.POST, request.FILES)
         if forms.is_valid():
-            handle_uploaded_file(request.FILES['file'])
             messages.success(request, 'Product saved sucessfully!!')
             forms.save()
-            forms = productMasterForm()
-    forms = productMasterForm()
-    context = {'Productform': forms}
-    return render(request, 'deepakblog/productMasterDetails.html', context)    
+            return redirect('deepakblog:productMasterShow')
+    else:        
+        forms = productMasterForm()
+    # product = productMaster.objects.all()
+    context = {'forms': forms}
+    return render(request, 'deepakblog/productMasterDetails.html', context)
 
+@login_required(login_url='deepakblog:userlogin')       
+def productDetailsMasterShow(request):
+    # product = productMaster.objects.get()
+    return render(request, 'deepakblog/showproductData.html')
+
+@login_required(login_url='deepakblog:userlogin')       
+def bookMasterDetails(request):
+    if request.method == 'POST':
+        forms = bookMasterForms(request.POST, request.FILES)
+        if forms.is_valid():
+            messages.success(request, 'Book added sucessfully!!')
+            forms.save()
+    forms = bookMasterForms()
+    book = bookMaster.objects.all()
+    context = {'forms':forms, 'book':book}
+    return render(request, 'deepakblog/bookData.html',context)

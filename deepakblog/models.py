@@ -1,5 +1,6 @@
 from django.db import models
-from djrichtextfield.models import RichTextField
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Post(models.Model):
     content = RichTextField()
@@ -34,6 +35,12 @@ class productMaster(models.Model):
     productCategories = models.ForeignKey(productCategories, on_delete=models.CASCADE)
     productPrize = models.IntegerField()
     productReleaseDate = models.DateField(max_length = 50)
-    productProductImage = models.ImageField(null=True,blank=True, upload_to='images/')
-    productDescription = RichTextField()
+    productProductImage = models.ImageField(null=True,blank=True, upload_to='uploads/')
+    productDescription = RichTextUploadingField()
     active = models.CharField('Active', max_length=10, choices=active, blank=True)
+
+class bookMaster(models.Model):
+    id = models.AutoField(primary_key=True)
+    bookName = models.CharField('Book Name', max_length = 50)
+    bookImage = models.ImageField('Upload Image', null=True,blank=True, upload_to='uploads/')
+    bookDescription = RichTextUploadingField('Book Description')    

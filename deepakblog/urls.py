@@ -11,5 +11,7 @@ urlpatterns = [
     path('userlogout/', views.userLogout, name='userlogout'),
     path('musicianDelete/', views.musicianDelete, name="musicianDelete"),
     path('productMaster/', views.productMaster, name="productMaster"),
-    path('productMasterDetails/', views.productMasterDetails, name="productMasterDetails"),
+    path('productMasterView/', views.productDetailsMaster, name="productMasterView"),
+    path('productMasterShow/', views.productDetailsMasterShow, name="productMasterShow"),
+    path('bookMaster/', views.bookMasterDetails, name="bookMaster"),
 ]

@@ -23,9 +23,9 @@
 <body>
     {% include 'deepakblog/header.html' %}
         {% block content %}
-            <div class="container-fluid">
+            <div class="container-fluid my-5">
                 <div class="container">
-                    <h3 class="text-center py-2 text-success">All Product Records and there Status</h3>
+                    <h3 class="text-center py-2 text-success">Add Product </h3>
                     {% if messages %}
                         <ul class="messages">
                             {% for message in messages %}
@@ -35,42 +35,20 @@
                             {% endfor %}
                         </ul>
                     {% endif %}
-                    <!-- Button trigger modal -->
-                    <div class="d-flex justify-content-end pb-3">
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Add Product
-                        </button>
-                    </div>     
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Add New Products</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <form action="{% url 'deepakblog:productMasterDetails' %}" method="POST"  enctype="multipart/form-data">
+                                <form action="{% url 'deepakblog:productMasterView' %}" method="POST"  enctype="multipart/form-data">
                                     {% csrf_token %}
-                                    <div class="modal-body">
-                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-md-12">
-                                                {% if Productform %}
-                                                   {{Productform.as_table}} 
+                                            <div class="col-md-8">
+                                                {% if forms %}
+                                                    {{forms.media }}
+                                                    {{forms.as_p}} 
                                                 {% endif %}
-                                            </div>
+                                            </div>   
                                         </div>
-                                     </div>    
-                                    </div>
-                                    <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-primary">Save</button>
-                                    </div>
                                 </form>
-                            </div>
-                            </div>
-                        </div>
-  
+                        <!-- Show Product Details -->  
                 </div>
             </div>
         {% endblock content %}
@@ -81,5 +59,13 @@
 <script src="{% static 'js/jquery-3.2.1.slim.min.js' %}"></script>
 <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
 <script src="{% static 'js/popper.min.js' %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+<link rel="stylesheet" href="/path/to/styles/default.css">
+<script src="/path/to/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 </body>
 </html>

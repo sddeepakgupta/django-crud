@@ -1,8 +1,8 @@
 from django.core import validators
 from django import forms
-from .models import Musician, productMaster
-from django.core.files.uploadedfile import SimpleUploadedFile
-from djrichtextfield.widgets import RichTextWidget
+from .models import Musician, productMaster, bookMaster
+# from django.core.files.uploadedfile import SimpleUploadedFile
+from ckeditor.widgets import CKEditorWidget
 
 # ####model froms data define
 class MusicianForm(forms.ModelForm):
@@ -24,9 +24,18 @@ class productMasterForm(forms.ModelForm):
            'productCategories':forms.Select(attrs={'class':'form-control'}),
            'productPrize':forms.TextInput(attrs={'class':'form-control'}),
            'productReleaseDate':forms.DateInput(attrs={'class':'form-control'}),
-           'productProductImage':forms.ClearableFileInput(attrs={'multiple': True, 'class':'form-control'}), 
-           'productDescription':forms.CharField(widget=RichTextWidget()),
+        #    'productProductImage':forms.CharField(widget=CKEditorWidget()), 
+           'productDescription':forms.CharField(widget=CKEditorWidget()),
            'active':forms.Select(attrs={'class':'form-control'}), 
-        }        
+        } 
+#  Book Master Details
+class bookMasterForms(forms.ModelForm):
+    class Meta:
+        model = bookMaster
+        fields = '__all__'
+        widgets = {
+           'bookName':forms.TextInput(attrs={'class':'form-control'}),
+           'bookDescription':forms.CharField(widget=CKEditorWidget()), 
+        }
 
     

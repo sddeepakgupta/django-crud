@@ -29,8 +29,11 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'deepakblog:productMaster' %}">Products</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'deepakblog:bookMaster' %}">Book Master</a>
+          </li>
         </ul>
-          <span class="p-1">Hello, {{request.user}}</span>
+          <span class="p-1">Hi, {{request.user}}</span>
           <a href="{% url 'deepakblog:userlogout' %}" class="btn btn-primary" type="submit">Logout</a>
       </div>
     </div>
