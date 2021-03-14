@@ -2,16 +2,17 @@
   <link rel="icon" href="{% static 'images/favicon-32x32.png' %}" type="image/ico" />
   <link rel="stylesheet" href="{% static 'icofont/icofont.min.css' %}">
   <link rel="stylesheet" href="{% static 'icofont/icofont.css' %}">
-  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark sticky-top" style="height: 100px; background-color: #020031;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{% url 'deepakblog:index' %}"><img src="{% static 'images/logo.png' %}" alt="logo" class="img fluid img-responsive" style="display: inline-block; width: 30%;"></a>
+      <a class="navbar-brand" href="{% url 'deepakblog:home' %}"><i class="fas fa-crown"></i>Technology</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'deepakblog:index' %}">Home</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'deepakblog:home' %}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
@@ -33,7 +34,7 @@
             <a class="nav-link" href="{% url 'deepakblog:bookMaster' %}">Book Master</a>
           </li>
         </ul>
-          <span class="p-1">Hi, {{request.user}}</span>
+          <span class="p-1 text-white">Hi, {{request.user}}</span>&nbsp;&nbsp;
           <a href="{% url 'deepakblog:userlogout' %}" class="btn btn-primary" type="submit">Logout</a>
       </div>
     </div>

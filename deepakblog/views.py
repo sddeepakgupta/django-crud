@@ -11,12 +11,8 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-# def login(request):
-#     if not request.user.is_authenticated:
-#         fm = AuthenticationForm()
-#         return render(request, 'deepakblog/login.html', {'form':fm})
-#     else:
-#         return redirect('/')       
+def homeview(request):
+    return render(request, 'deepakblog/home.html')       
 def userlogin(request):
     if request.method == "POST":
         fm = AuthenticationForm(request = request, data = request.POST)

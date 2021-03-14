@@ -24,20 +24,23 @@
         .icofont{
             color: #000;
         }
+        .card{
+            height: 250px;
+        }
     </style>
 </head>
 <body>
     {% include 'deepakblog/header.html' %}
         {% block content %}
-            <h3 class="text-center text-success">All Our Products</h3>
+            <h3 class="text-center text-danger">All Our Products</h3>
             
             <div class="container-fluid text-white">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="card bg-success">
+                            <div class="card bg-danger">
                                 <div class="card-header">
-                                <span class=""><i class="product-icon"></i></span>  Product 
+                                <span class=""><i class="product-icon"></i></span>  Product Master
                                 </div>
                                 <div class="card-body">
                                   <h5 class="card-title">Special title treatment</h5>
@@ -49,17 +52,17 @@
                         <div class="col-md-4">
                             <div class="card bg-danger">
                                 <div class="card-header">
-                                    <span class=""><i class="product-icon"></i></span> Sale Product
+                                    <span class=""><i class="product-icon"></i></span>  Email Master
                                 </div>
                                 <div class="card-body">
-                                  <h5 class="card-title">Special title treatment</h5>
-                                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                  <a href="#" class="btn btn-dark">Go somewhere</a>
+                                  <h5 class="card-title">Test Email</h5>
+                                  <p class="card-text">Email with attatchment</p>
+                                  <a href="#" class="btn btn-dark">Read Documentation</a>
                                 </div>
                               </div> 
                         </div>
                         <div class="col-md-4">
-                            <div class="card bg-primary">
+                            <div class="card bg-danger">
                                 <div class="card-header">
                                 <span class=""><i class="product-icon"></i></span>  Stock Products 
                                 </div>
@@ -73,7 +76,7 @@
                     </div>
                     <div class="row my-3">
                         <div class="col-md-4">
-                            <div class="card bg-dark">
+                            <div class="card bg-danger">
                                 <div class="card-header">
                                     <span class=""><i class="product-icon"></i></span> Deliver Product
                                 </div>
@@ -85,7 +88,7 @@
                               </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="card bg-warning">
+                            <div class="card bg-danger">
                                 <div class="card-header">
                                     <span class=""><i class="product-icon"></i></span> Release Product 
                                 </div>
@@ -97,7 +100,7 @@
                               </div> 
                         </div>
                         <div class="col-md-4">
-                            <div class="card bg-info">
+                            <div class="card bg-danger">
                                 <div class="card-header">
                                     <span class=""><i class="product-icon"></i></span> Product Review
                                 </div>

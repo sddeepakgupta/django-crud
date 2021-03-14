@@ -6,7 +6,7 @@ app_name = 'deepakblog'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    # path('login/', views.login, name='login'),
+    path('home/', views.homeview, name='home'),
     path('userlogin/', views.userlogin, name='userlogin'),
     path('userlogout/', views.userLogout, name='userlogout'),
     path('musicianDelete/', views.musicianDelete, name="musicianDelete"),
