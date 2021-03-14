@@ -14,4 +14,5 @@ urlpatterns = [
     path('productMasterView/', views.productDetailsMaster, name="productMasterView"),
     path('productMasterShow/', views.productDetailsMasterShow, name="productMasterShow"),
     path('bookMaster/', views.bookMasterDetails, name="bookMaster"),
+    path('testMail/', views.sendTestMail, name="testMail"),
 ]

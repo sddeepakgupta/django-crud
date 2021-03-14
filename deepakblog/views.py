@@ -7,6 +7,7 @@ from .models import *
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 
 
 # Create your views here.
@@ -109,3 +110,14 @@ def bookMasterDetails(request):
     book = bookMaster.objects.all()
     context = {'forms':forms, 'book':book}
     return render(request, 'deepakblog/bookData.html',context)
+
+@login_required(login_url='deepakblog:userlogin')
+def sendTestMail(request):
+    send_mail(
+    'Subject here',
+    'Here is the message.',
+    'dg285986@gmail.com.com',
+    ['guptadm143@gmail.com'],
+    fail_silently=False,
+    )
+    return HttpResponse("Email Send Successfully!!")
