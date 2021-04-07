@@ -35,7 +35,7 @@ class bookMasterForms(forms.ModelForm):
         fields = '__all__'
         widgets = {
            'bookName':forms.TextInput(attrs={'class':'form-control'}),
-           'bookDescription':forms.CharField(widget=CKEditorWidget()), 
+           'bookDescription':forms.CharField(widget=CKEditorWidget()),
         }
 
     

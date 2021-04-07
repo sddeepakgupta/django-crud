@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Add meta tags for mobile and IE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title> PayPal Smart Payment Buttons Integration | Responsive Buttons </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <style>
+        /* Media query for mobile viewport */
+        @media screen and (max-width: 400px) {
+            #paypal-button-container {
+                width: 100%;
+            }
+        }
+        
+        /* Media query for desktop viewport */
+        @media screen and (min-width: 400px) {
+            #paypal-button-container {
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" style="margin: 100pt; mar">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="text-danger">Pay for your Book 20$</h4>
+                    </div>
+                    <div class="card-body">
+                        <strong>
+                            Just Buy and start Learning good Enough!!
+                        </strong>
+                        <img src="{% static 'images/christopher-gower-m_HRfLhgABo-unsplash.jpg' %}" class="img-fluid" alt="C1" style="height: 300px; width:100% !important;">
+                        <center class="mt-2">
+                            <!-- Set up a container element for the button -->
+                            <div id="paypal-button-container"></div>
+                        </center>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Include the PayPal JavaScript SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AV73ETZefOE1X0h1h-VtCnNiwJTT_7n5LRJvwoTuVZGYx-uklrxkK9r7--YzGP5XEuFr4Z4ptCW83_cE&currency=USD"></script>
+
+    <script>
+        // Render the PayPal button into #paypal-button-container
+        paypal.Buttons().render('#paypal-button-container');
+    </script>
+</body>
+
+</html>

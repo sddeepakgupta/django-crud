@@ -15,4 +15,5 @@ urlpatterns = [
     path('productMasterShow/', views.productDetailsMasterShow, name="productMasterShow"),
     path('bookMaster/', views.bookMasterDetails, name="bookMaster"),
     path('testMail/', views.sendTestMail, name="testMail"),
+    path('paymentBook/', views.payofbookprice, name="paymentBook"),
 ]

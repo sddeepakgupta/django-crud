@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deepak ::.Product Master.::</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <style>
         *{
             margin: 0px;
@@ -54,6 +55,10 @@
                             <p class="py-2 mx-4 text-center text-dark bordered-3">
                                 {{Book.bookDescription}}
                             </p>
+                            <div class="d-flex d-inline">
+                                <a href="{% url 'deepakblog:paymentBook' %}" class="btn btn-danger">Buy Book</a> &nbsp;&nbsp;
+                                <button class="btn btn-danger"> 20 <i class="fa fa-inr" aria-hidden="true"></i></button>
+                            </div>
                         </div>
                     {% endfor%}
                 {% endif %}

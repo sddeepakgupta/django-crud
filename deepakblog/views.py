@@ -121,3 +121,9 @@ def sendTestMail(request):
     fail_silently=False,
     )
     return HttpResponse("Email Send Successfully!!")
+
+
+@login_required(login_url='deepakblog:userlogin')
+def payofbookprice(request):
+    return render(request, 'deepakblog/payment.html')
+    
