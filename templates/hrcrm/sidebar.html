@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .sidebar{
+            width: 250px;
+            height: 100%;
+            background: #c31432;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+        .user-profile{
+            margin-top: 50px;
+            padding: 40px 0px 0px 30px;
+            width: 500px;
+            background-color: black;
+            color: cornsilk;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div class="sidebar">
+    <div class="top-header">
+        <span class="user-profile">User Profile</span>
+    </div>
+    <div class="bottom-header">
+        <ul>
+            <li>H1 Services</li>
+            <li>H2 Services</li>
+            <li>H3 Services</li>
+            <li>H4 Services</li>
+            <li>H5 Services</li>
+        </ul>
+    </div>
+</div>
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<script>
+    
+</script>
+</body>
+</html>

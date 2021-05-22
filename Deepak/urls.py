@@ -20,7 +20,9 @@ from django.conf.urls.static import static
 from deepakblog import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('hrcrm.urls')),
     path('', include('deepakblog.urls')),
+    
     # path('musicianDelete/<int:id>/', views.musicianDelete),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'deepakblog.apps.DeepakblogConfig',
+    'hrcrm.apps.HrcrmConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -152,6 +153,19 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'allinone',
+#         'USER': 'root',
+#         'PASSWORD': "",
+#         'HOST': "127.0.0.1",
+#         'PORT': "80",
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+#         }
+#     }
+# }
 
 
 # Password validation

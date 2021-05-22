@@ -44,4 +44,4 @@ class bookMaster(models.Model):
     bookName = models.CharField('Book Name', max_length = 50)
     bookImage = models.ImageField('Upload Image', null=True,blank=True, upload_to='uploads/')
     bookDescription = RichTextUploadingField('Book Description') 
-    price = models.IntegerField('Price Of The Book', max_length=7, default='20')   
+    price = models.IntegerField('Price Of The Book', default='20')   
